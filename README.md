@@ -1,5 +1,5 @@
 # dragon-g
-dragon gene decode
+dragon gene decode for Dragonereum game
 
 # How to use
 
