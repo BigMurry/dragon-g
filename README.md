@@ -1,6 +1,12 @@
 # dragon-g
 dragon gene decode for Dragonereum game
 
+# Install
+
+```
+yarn add dragon-g
+```
+
 # How to use
 
 ```javascript
