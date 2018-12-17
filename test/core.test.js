@@ -1,5 +1,5 @@
 const test = require('tap').test;
-const {parse} = require('../lib/core');
+const {parse} = require('..');
 
 test('parse', t => {
   t.plan(2);
