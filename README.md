@@ -10,7 +10,7 @@ yarn add dragon-g
 # How to use
 
 ```javascript
-const {parse} = require('dragon-g');
+const {parse, getCoolnessScore} = require('dragon-g');
 const codes = [
   '40100004011000401000040100102011010201001020100102010010601100020100301010',
   '20100001011000101000010100001010030301000040100102010000401001040100003010',
@@ -18,9 +18,9 @@ const codes = [
   '101010010101001010100102010010201003040100304010'
 ]; // contract: 0x960f401aed58668ef476ef02b2a2d43b83c261d8 -> getGenome
 const parsed = parse(codes);
+const coolness = getCoolnessScore(parsed); // score = coolscore * 100
 
 // parsed = {allCodes: [], dominants: []};
-
 console.dir(parsed);
 /*
 { allCodes:
