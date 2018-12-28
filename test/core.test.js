@@ -1,8 +1,8 @@
 const test = require('tap').test;
-const {parse, getCoolnessScore} = require('..');
+const {parse, getCoolnessScore, getSkills, getDS} = require('..');
 
 test('parse', t => {
-  t.plan(3);
+  t.plan(5);
 
   // id = 100
   const genes = [
@@ -12,8 +12,17 @@ test('parse', t => {
     '2010000201000020100001011000101000010100001010'
   ];
   const parsed = parse(genes);
-  console.dir(parsed);
+  const expectedCool = 3844;
+  const expectedSkills = [650, 800, 1125, 600, 700];
+  const expectedDs = 6535;
+
+  const cools = getCoolnessScore(parsed);
+  const skills = getSkills(parsed.dominants);
+  const ds = getDS(skills);
+
   t.equal(40, parsed.allCodes.length);
   t.equal(10, parsed.dominants.length);
-  t.equal(3844, getCoolnessScore(parsed));
+  t.equal(cools, expectedCool);
+  t.strictSame(skills, expectedSkills);
+  t.equal(ds, expectedDs);
 });
